@@ -1,8 +1,21 @@
-# React + Vite
+# REPO FE KELOMPOK 4
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Final Project Kelompok 4
 
-Currently, two official plugins are available:
+##Description
+Final  Project kelompok 4 Harisenin bootcamp , project bertema untuk para pencari kerja mengambil refrensi dari salah satu situs populer 
+
+
+##Collabolator
+-AnnangBudiS
+-Dendi Abdhie Kusumawardana 
+-Fikri Ibnu Fajar
+-M Taopan Surgawan 
+-Fauzan JM
+-Risky Dwi 
+-One Rokhsi
+
+
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
