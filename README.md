@@ -2,18 +2,18 @@
 
 Final Project Kelompok 4
 
-#Description
+# Description
 Final  Project kelompok 4 Harisenin bootcamp , project bertema untuk para pencari kerja mengambil refrensi dari salah satu situs populer 
 
 
-#Collabolator
--AnnangBudiS
--Dendi Abdhie Kusumawardana 
--Fikri Ibnu Fajar
--M Taopan Surgawan 
--Fauzan JM
--Risky Dwi 
--One Rokhsi
+# Collabolator
+- AnnangBudiS
+- Dendi Abdhie Kusumawardana 
+- Fikri Ibnu Fajar
+- M Taopan Surgawan 
+- Fauzan JM
+- Risky Dwi 
+- One Rokhsi
 
 
 
