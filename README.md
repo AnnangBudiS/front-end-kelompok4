@@ -13,8 +13,8 @@ Final  Project kelompok 4 Harisenin bootcamp , project bertema untuk para pencar
 - [Annang Budi S](https://github.com/AnnangBudiS)
 - [Dendi Abdhie Kusumawardana](https://github.com/dendyabdhie)
 - [Fikri Ibnu Fajar](https://github.com/Fikriif)
-- (M Taopan Surgawan) 
-- Fauzan JM
+- [M Taopan Surgawan](https://github.com/Opanj)
+- [Fauzan JM](https://github.com/Zan-14)
 - Risky Dwi 
 - One Rokhsi
 
