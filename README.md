@@ -4,7 +4,14 @@ Final Project Kelompok 4
 
 # Description
 Final  Project kelompok 4 Harisenin bootcamp , project bertema untuk para pencari kerja mengambil refrensi dari salah satu situs populer 
+# Demo 
 
+# Tech / Tools
+- React vite
+- Tailwindcss
+- daisyui
+- axios
+- react-router-dom
 
 # Collabolator
 - AnnangBudiS
