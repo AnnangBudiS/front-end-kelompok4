@@ -2,16 +2,19 @@
 
 Final Project Kelompok 4
 
-# Description
+## Description
 Final  Project kelompok 4 Harisenin bootcamp , project bertema untuk para pencari kerja mengambil refrensi dari salah satu situs populer 
+## Demo 
 
+## Tech / Tools
+**client:** React+vite, Tailwindcss, Daisyui, axios, React-router-dom 
 
-# Collabolator
-- AnnangBudiS
-- Dendi Abdhie Kusumawardana 
-- Fikri Ibnu Fajar
-- M Taopan Surgawan 
-- Fauzan JM
+## Collabolator
+- [Annang Budi S](https://github.com/AnnangBudiS)
+- [Dendi Abdhie Kusumawardana](https://github.com/dendyabdhie)
+- [Fikri Ibnu Fajar](https://github.com/Fikriif)
+- [M Taopan Surgawan](https://github.com/Opanj)
+- [Fauzan JM](https://github.com/Zan-14)
 - Risky Dwi 
 - One Rokhsi
 
