@@ -4,15 +4,7 @@ import RegisterPage from "./pages/register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element="hello world" />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
-    </Router>
-  );
+  return <Router></Router>;
 }
 
 export default App;
