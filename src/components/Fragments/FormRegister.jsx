@@ -1,4 +1,5 @@
 import InputForm from "../Elements/Input/index";
+
 const FormRegister = () => {
   return (
     <form action="">

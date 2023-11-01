@@ -1,5 +1,5 @@
-import FormRegister from "../components/Fragments/FormRegister";
-import Buttons from "../components/Elements/Buttons/buttons";
+import FormRegister from "../../components/Fragments/FormRegister";
+import Buttons from "../../components/Elements/Buttons/buttons";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {

@@ -1,5 +1,5 @@
-import FormLogin from "../components/Fragments/FormLogin";
-import Buttons from "../components/Elements/Buttons/buttons";
+import FormLogin from "../../components/Fragments/FormLogin";
+import Buttons from "../../components/Elements/Buttons/buttons";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
