@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import NavMenu from "../components/Navbar/NavMenu";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/Elements/Sidebar/Sidebar";
 import axios from "axios";
 import Cards from "../components/Cards/Cards";
 import Links from "../components/Links/Links";
