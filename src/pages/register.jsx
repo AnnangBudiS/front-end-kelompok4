@@ -1,4 +1,4 @@
-import FormRegister from "../components/Fragments/FormRegister";
+import FormRegister from "../components/Fragments/Forms/FormRegister";
 import Buttons from "../components/Elements/Buttons/buttons";
 import { Link } from "react-router-dom";
 

@@ -4,7 +4,14 @@ import RegisterPage from "./pages/register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  return <Router></Router>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={`hello world!`} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import FormLogin from "../components/Fragments/FormLogin";
+import FormLogin from "../components/Fragments/Forms/FormLogin";
 import Buttons from "../components/Elements/Buttons/buttons";
 import { Link } from "react-router-dom";
 
