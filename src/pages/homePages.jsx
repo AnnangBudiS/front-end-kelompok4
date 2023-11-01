@@ -5,7 +5,7 @@ import OurCompany from "../components/Layouts/HomeLayots/OurCompany";
 import { useState } from "react";
 import Home from "../components/Fragments/Homes/Home";
 import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
-import Info from "../components/HomePage/Info";
+import Info from "../components/Fragments/Homes/Info";
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);
