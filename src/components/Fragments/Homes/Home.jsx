@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import Card from "./Card";
+import Card from "../../Elements/Cards/CardHome";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

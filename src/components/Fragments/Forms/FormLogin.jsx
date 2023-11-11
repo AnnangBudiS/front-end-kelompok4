@@ -1,4 +1,4 @@
-import InputForm from "../Elements/Input/index";
+import InputForm from "../../Elements/Input/index";
 
 const FormLogin = () => {
   return (

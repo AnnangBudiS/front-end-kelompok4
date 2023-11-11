@@ -1,5 +1,5 @@
 import { Children, useState } from "react";
-import Links from "../Links/Links";
+import Links from "../../Links/Links";
 
 const Sidebar = ({ children }) => {
   return (

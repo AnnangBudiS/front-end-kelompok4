@@ -1,12 +1,12 @@
-import HeaderHome1 from "../components/Page/HomePage/HeaderHome1";
-import HeaderHome2 from "../components/Page/HomePage/HeaderHome2";
-import FooterHome from "../components/Page/HomePage/FooterHome";
-import OurCompany from "../components/Page/HomePage/OurCompany";
+import HeaderHome1 from "../components/Layouts/HomeLayots/HeaderHome1";
+import HeaderHome2 from "../components/Layouts/HomeLayots/HeaderHome2";
+import FooterHome from "../components/Layouts/HomeLayots/FooterHome";
+import OurCompany from "../components/Layouts/HomeLayots/OurCompany";
 import { useState } from "react";
 import Home from "../components/Page/HomePage/Home";
 import PasangLoker from "../components/Page/HomePage/PasangLoker";
 import Info from "../components/Page/HomePage/Info";
-import Blog from "../components/Page/HomePage/Blog";
+import Blog from "../components/Layouts/HomeLayots/Blog"
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);
