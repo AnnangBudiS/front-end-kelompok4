@@ -3,16 +3,16 @@ export default function PasangLoker() {
     <>
       <div>
       <div className="flex flex-col gap-5 justify-center items-center mt-14">
-        <div className="text-3xl font-bold text-orange-500">FAQ KerjaPaksa</div>
+        <div className="text-3xl font-bold text-orange-500">FAQ Forlokers</div>
         <div className="w-4/6">
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox"/>
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Apa itu KerjaPaksa?
+              Apa itu Forlokers?
             </div>
             <div className="collapse-content text-xl">
               <p>
-                KerjaPaksa adalah platform lowongan kerja online terpercaya di
+                Forlokers adalah platform lowongan kerja online terpercaya di
                 indonesia yang menghubungkan perusahaan kandidat terbaik.
               </p>
             </div>
@@ -20,11 +20,11 @@ export default function PasangLoker() {
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox" />
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Apa saja manfaat menggunakan KerjaPaksa?
+              Apa saja manfaat menggunakan Forlokers?
             </div>
             <div className="collapse-content text-xl">
               <p className="mb-1">
-                KerjaPaksa menawarkan berbagai manfaat bagi perusahaan, termasuk
+                Forlokers menawarkan berbagai manfaat bagi perusahaan, termasuk
                 :
               </p>
               <ul className="list-disc list-inside">
@@ -38,16 +38,16 @@ export default function PasangLoker() {
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox" />
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Berapa biaya menggunakan KerjaPaksa?
+              Berapa biaya menggunakan Forlokers?
             </div>
             <div className="collapse-content text-xl">
-              <p>KerjaPaksa menawarkan promosi lowongan kerja secara gratis</p>
+              <p>Forlokers menawarkan promosi lowongan kerja secara gratis</p>
             </div>
           </div>
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox" />
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Bagaimana cara menggunakan KerjaPaksa?
+              Bagaimana cara menggunakan Forlokers?
             </div>
             <div className="collapse-content text-xl">
               <p>
@@ -61,7 +61,7 @@ export default function PasangLoker() {
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox" />
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Bagaimana cara memasang lowongan kerja di KerjaPaksa?
+              Bagaimana cara memasang lowongan kerja di Forlokers?
             </div>
             <div className="collapse-content text-xl">
               <p>
@@ -83,7 +83,7 @@ export default function PasangLoker() {
           <div className="collapse bg-base-200 mb-3">
             <input type="checkbox" />
             <div className="collapse-title text-2xl font-medium text-orange-500">
-              Bagaimana cara menyaring kandidat di KerjaPaksa?
+              Bagaimana cara menyaring kandidat di Forlokers?
             </div>
             <div className="collapse-content text-xl">
               <p>

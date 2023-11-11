@@ -3,27 +3,36 @@ import HeaderHome2 from "../components/Layouts/HomeLayots/HeaderHome2";
 import FooterHome from "../components/Layouts/HomeLayots/FooterHome";
 import OurCompany from "../components/Layouts/HomeLayots/OurCompany";
 import { useState } from "react";
-import Home from "../components/Fragments/Homes/Home";
-import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
-import Info from "../components/Fragments/Homes/Info";
+import Home from "../components/Page/HomePage/Home";
+import PasangLoker from "../components/Page/HomePage/PasangLoker";
+import Info from "../components/Page/HomePage/Info";
+import Blog from "../components/Layouts/HomeLayots/Blog"
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);
   const [infoLokers, setInfoLokers] = useState(false);
+  const [blog, setBlog] = useState(false);
 
   const handleHome = () => {
     setIsActive(false);
     setInfoLokers(false);
+    setBlog(false);
   };
 
   const handleclick = () => {
     setIsActive(true);
     setInfoLokers(false);
+    setBlog(false);
   };
 
   const handleLokers = () => {
     setInfoLokers(true);
+    setBlog(false);
   };
+
+  const handleBlog = () => {
+    setBlog(true)
+  }
 
   const Componens = () => {
     return (
@@ -34,6 +43,14 @@ const HomePages = () => {
       </>
     );
   };
+
+  const AnotherComponens = () => {
+    return (
+      <>
+      {infoLokers ? <Info /> : Componens()}
+      </>
+    )
+  }
 
   return (
     <>
@@ -58,7 +75,7 @@ const HomePages = () => {
             </label>
           </div>
           <a className="btn btn-ghost normal-case text-3xl font-bold ml-20">
-            KerjaPaksa
+            Forlokers
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -73,7 +90,7 @@ const HomePages = () => {
               <button onClick={handleclick}>Pasang Loker</button>
             </li>
             <li>
-              <a>Blog</a>
+              <button onClick={handleBlog}>Blog</button>
             </li>
           </ul>
         </div>
@@ -86,7 +103,7 @@ const HomePages = () => {
           </a>
         </div>
       </div>
-      {infoLokers ? <Info /> : Componens()}
+      {blog ? <Blog /> : AnotherComponens()}
       <FooterHome />
     </>
   );
