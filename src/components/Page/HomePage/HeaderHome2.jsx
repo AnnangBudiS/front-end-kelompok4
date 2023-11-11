@@ -9,8 +9,8 @@ const HeaderHome2 = () => {
             </div>
             <div>
               <p className="text-slate-400 pb-4">
-                KerjaPaksa adalah platform online yang menghubungkan pencari kerja
-                dengan perusahaan. KerjaPaksa menawarkan berbagai fitur yang dapat
+                Forlokers adalah platform online yang menghubungkan pencari kerja
+                dengan perusahaan. Forlokers menawarkan berbagai fitur yang dapat
                 membantu pencari kerja untuk menemukan pekerjaan yang sesuai
                 dengan minat dan kualifikasi anda.
               </p>

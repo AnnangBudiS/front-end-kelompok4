@@ -6,9 +6,11 @@ import Cards from "../components/Cards/Cards";
 import Links from "../components/Links/Links";
 import JobLayout from "../components/Jobmainlayout/JobLayout";
 
+
 const JobPages = () => {
   const [jobData, setJobData] = useState([]);
   const [isActive, setIsActive] = useState();
+
   const menulist = [
     {
       id: 1,
@@ -30,6 +32,10 @@ const JobPages = () => {
       id: 5,
       title: "Hubungi CS",
     },
+    // {
+    //   id: 6,
+    //   title: "Settings"
+    // }
   ];
 
   const getAllData = async () => {
@@ -49,6 +55,8 @@ const JobPages = () => {
   useEffect(() => {
     getAllData();
   }, []);
+
+
 
   return (
     <Fragment>
