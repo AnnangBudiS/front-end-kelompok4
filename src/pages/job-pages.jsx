@@ -1,9 +1,9 @@
-import { Fragment, useEffect, useState } from "react";
-import NavMenu from "../components/Navbar/NavMenu";
+import { useEffect, useState } from "react";
+import NavMenu from "../components/Elements/Navbar/NavMenu";
 import Sidebar from "../components/Elements/Sidebar/Sidebar";
 import axios from "axios";
-import Cards from "../components/Cards/Cards";
 import Links from "../components/Links/Links";
+import Cards from "../components/Elements/Cards/Card";
 import JobLayout from "../components/Jobmainlayout/JobLayout";
 
 const JobPages = () => {
@@ -51,7 +51,7 @@ const JobPages = () => {
   }, []);
 
   return (
-    <Fragment>
+    <>
       <header className="fixed w-full shadow-lg bg-base-100 z-[2]">
         <NavMenu />
       </header>
@@ -93,7 +93,7 @@ const JobPages = () => {
         </JobLayout>
       </div>
       <footer></footer>
-    </Fragment>
+    </>
   );
 };
 
