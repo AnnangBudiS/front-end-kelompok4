@@ -4,7 +4,7 @@ const FooterHome = () => {
       <div className="text-white basis-2/5 py-20 px-32">
         <div className="text-3xl mb-4 font-bold">Forlokers</div>
         <div>
-          KerjaPaksa adalah platform online yang menghubungkan pencari kerja
+          Forlokers adalah platform online yang menghubungkan pencari kerja
           dengan perusahaan
         </div>
       </div>

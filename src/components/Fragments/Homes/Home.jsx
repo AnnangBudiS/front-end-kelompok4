@@ -6,6 +6,9 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 const Home = () => {
+  // const response = await fetch(`${}`)
+  // const loker = await response.json()
+
   return (
     <>
       <div className="px-20">
@@ -22,6 +25,21 @@ const Home = () => {
           }}
           className="mySwiper"
         >
+          {/* 
+            {loker.map(data => {
+              return (
+                <SwiperSlide key={}>
+                <div className='shadow-xl'>
+                  <Card title={} images={} id={}/>
+                </div>
+                </SwiperSlide> 
+              )
+            })
+            }
+          */}
+          <SwiperSlide>
+            <Card />
+          </SwiperSlide>
           <SwiperSlide>
             <Card />
           </SwiperSlide>

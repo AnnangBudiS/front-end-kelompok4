@@ -1,28 +1,38 @@
 import HeaderHome1 from "../components/Layouts/HomeLayots/HeaderHome1";
 import HeaderHome2 from "../components/Layouts/HomeLayots/HeaderHome2";
-import FooterHome from "../components/Layouts/HomeLayots/FooterHome";
+import FooterHome from "../components/Elements/Footer/FooterHome";
 import OurCompany from "../components/Layouts/HomeLayots/OurCompany";
 import { useState } from "react";
 import Home from "../components/Fragments/Homes/Home";
 import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
 import Info from "../components/Fragments/Homes/Info";
+import Blog from "../components/Layouts/HomeLayots/Blog";
+import { Link } from "react-router-dom";
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);
   const [infoLokers, setInfoLokers] = useState(false);
+  const [blog, setBlog] = useState(false);
 
   const handleHome = () => {
     setIsActive(false);
     setInfoLokers(false);
+    setBlog(false);
   };
 
   const handleclick = () => {
     setIsActive(true);
     setInfoLokers(false);
+    setBlog(false);
   };
 
   const handleLokers = () => {
     setInfoLokers(true);
+    setBlog(false);
+  };
+
+  const handleBlog = () => {
+    setBlog(true);
   };
 
   const Componens = () => {
@@ -35,9 +45,13 @@ const HomePages = () => {
     );
   };
 
+  const AnotherComponens = () => {
+    return <>{infoLokers ? <Info /> : Componens()}</>;
+  };
+
   return (
     <>
-      <div className="navbar bg-base-100 text-orange-500 drop-shadow-lg">
+      <div className="navbar bg-base-100 text-orange-500 drop-shadow-lg z-[1]">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,7 +72,7 @@ const HomePages = () => {
             </label>
           </div>
           <a className="btn btn-ghost normal-case text-3xl font-bold ml-20">
-            KerjaPaksa
+            Forlokers
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -73,20 +87,26 @@ const HomePages = () => {
               <button onClick={handleclick}>Pasang Loker</button>
             </li>
             <li>
-              <a>Blog</a>
+              <button onClick={handleBlog}>Blog</button>
             </li>
           </ul>
         </div>
         <div className="navbar-end mr-20">
-          <a className="btn btn-outline rounded-full font-bold text-orange-500 border-2 mr-4">
+          <Link
+            to="/register"
+            className="btn btn-outline rounded-full font-bold text-orange-500 border-2 mr-4"
+          >
             Daftar
-          </a>
-          <a className="btn bg-orange-500 rounded-full font-bold text-white">
+          </Link>
+          <Link
+            to="/login"
+            className="btn bg-orange-500 rounded-full font-bold text-white"
+          >
             Masuk
-          </a>
+          </Link>
         </div>
       </div>
-      {infoLokers ? <Info /> : Componens()}
+      {blog ? <Blog /> : AnotherComponens()}
       <FooterHome />
     </>
   );
