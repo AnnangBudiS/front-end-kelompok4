@@ -1,13 +1,13 @@
 import InputForm from "../../Elements/Input/index";
 
-const FormLogin = () => {
+const FormLogin = ({ onSubmit }) => {
   return (
-    <form action="">
+    <form action="" onSubmit={onSubmit}>
       <InputForm
-        label="Email"
-        type="email"
-        placeholder="Masukkan Email"
-        name="email"
+        label="Username"
+        type="text"
+        placeholder="Masukan username"
+        name="username"
       />
       <InputForm
         label="Password"

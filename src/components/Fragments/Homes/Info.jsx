@@ -1,6 +1,27 @@
+import { useEffect, useState } from "react";
 import Card from "../../Elements/Cards/CardHome";
+import axios from "axios";
 
 const InfoLoker = () => {
+  const [state, setState] = useState([]);
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(
+        "https://650ffe1a3ce5d181df5cd37b.mockapi.io/job",
+      );
+      const datas = await res.data;
+
+      setState(datas);
+      console.log(datas);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   // const response = await fetch(`${}`)
   // const loker = await response.json()
 
@@ -34,6 +55,15 @@ const InfoLoker = () => {
               )
             })
             } */}
+          {state.map((items, index) => (
+            <Card
+              key={index}
+              image={items.image}
+              position={items.position}
+              salary={items.salary}
+              location={items.location}
+            />
+          ))}
           <div>
             <Card />
           </div>
