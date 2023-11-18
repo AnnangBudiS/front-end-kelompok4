@@ -31,7 +31,7 @@ const LoginPage = () => {
   return (
     <div className=" h-screen flex flex-row">
       <img
-        src="./public/img/login.png"
+        src="./public/images/form/login.png"
         width="679px"
         alt="img"
         className="grayscale"

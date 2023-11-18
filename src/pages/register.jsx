@@ -6,7 +6,7 @@ const RegisterPage = () => {
   return (
     <div className=" h-screen flex flex-row">
       <img
-        src="./public/img/register.png"
+        src="./public/images/form/register.png"
         width="679px"
         alt="img"
         className="grayscale"
