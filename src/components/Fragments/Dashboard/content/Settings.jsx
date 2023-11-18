@@ -1,4 +1,4 @@
-import InputSetting from "./../../../InputSetting";
+import InputSetting from "../../../Settings/InputSetting";
 
 const Settings = () => {
   return (
