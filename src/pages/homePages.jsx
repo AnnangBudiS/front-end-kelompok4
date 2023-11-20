@@ -8,7 +8,7 @@ import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
 import Info from "../components/Fragments/Homes/Info";
 import Blog from "../components/Layouts/HomeLayots/Blog";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);

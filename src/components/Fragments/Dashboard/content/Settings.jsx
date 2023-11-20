@@ -3,7 +3,7 @@ import InputSetting from "../../../Settings/InputSetting";
 const Settings = () => {
   return (
     <>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full pl-10">
         <div className="avatar mt-20 mb-10 shadow-xl w-36 h-36 rounded-full">
           <div>
             <img src="\src\assets\react.svg" alt="none" />
