@@ -1,4 +1,15 @@
-const Cards = ({ key, image, title, company, location, position, salary }) => {
+import { Link } from "react-router-dom";
+
+const Cards = ({
+  key,
+  image,
+  title,
+  company,
+  location,
+  position,
+  salary,
+  ...props
+}) => {
   return (
     <div
       key={key}
@@ -12,7 +23,7 @@ const Cards = ({ key, image, title, company, location, position, salary }) => {
         position={position}
         salary={salary}
       />
-      <CardAction />
+      <CardAction {...props} />
     </div>
   );
 };
@@ -41,12 +52,15 @@ const CardBody = ({ title, company, location, position, salary }) => {
   );
 };
 
-const CardAction = () => {
+const CardAction = ({ ...props }) => {
   return (
     <div className="flex items-center gap-5">
-      <button className="border border-orange-500 p-2 px-5 rounded-full font-semibold">
+      <Link
+        {...props}
+        className="border border-orange-500 p-2 px-5 rounded-full font-semibold"
+      >
         Detail
-      </button>
+      </Link>
       <button className="bg-orange-500 p-2 px-5 rounded-full text-slate-50 font-semibold">
         Aply
       </button>

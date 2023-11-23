@@ -34,6 +34,7 @@ export default function CariLoker() {
               location={item.location}
               position={item.location}
               salary={item.salary}
+              to={`/details/${item.id}`}
             />
           ))
         ) : (
