@@ -32,6 +32,14 @@ const FormRegister = () => {
         placeholder="Masukkan Password"
         name="password"
       />
+      <div className="flex justify-center">
+        <button
+          className="h-9 px-6 w-[278px] font-semibold rounded-[30px] bg-orange-500 text-white text-center"
+          type="submit"
+        >
+          Daftar
+        </button>
+      </div>
     </form>
   );
 };

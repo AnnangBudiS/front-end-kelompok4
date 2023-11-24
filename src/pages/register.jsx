@@ -15,15 +15,6 @@ const RegisterPage = () => {
         <div className="border bg-white w-[400px] p-6 rounded-[15px] drop-shadow-2xl">
           <h1 className="text-2xl font-bold mb-2 text-center">Daftar</h1>
           <FormRegister />
-          <Buttons />
-          <div className="flex justify-center">
-            <button
-              className="h-9 px-6 w-[278px] font-semibold rounded-[30px] bg-orange-500 text-white text-center"
-              type="submit"
-            >
-              Masuk
-            </button>
-          </div>
           <div className="text-center text-sm pt-2">
             <p>
               Sudah Punya Akun?{" "}
@@ -32,6 +23,7 @@ const RegisterPage = () => {
               </Link>
             </p>
           </div>
+          <Buttons />
         </div>
       </div>
     </div>
