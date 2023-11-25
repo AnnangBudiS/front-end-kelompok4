@@ -25,7 +25,7 @@ const LoginPage = () => {
         const userData = await res.data;
         console.log(userData);
         userAuthCredentials(token, userData);
-        return navigate("/");
+        return navigate("/dashboard");
       });
   };
   return (
