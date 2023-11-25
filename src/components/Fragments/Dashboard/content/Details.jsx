@@ -6,8 +6,17 @@ import {
 } from "react-icons/fa6";
 
 import ContentDetails from "./ContentDetails";
+import ModalDetail from "../../../Elements/Modal/Modal"
+import { useState } from "react";
+
 
 export default function Details() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true)
+  const closeModal = () => setModalIsOpen(false)
+
+
   return (
     <section className="my-24 px-32">
       <h1 className="text-5xl font-bold text-orange-500">
@@ -25,9 +34,11 @@ export default function Details() {
             <p className="text-sm">PT.GO-JEK Indonesia</p>
           </p>
         </div>
-        <button className="btn bg-orange-500 px-6 py-2 text-slate-50 hover:text-slate-950 mr-52">
+        <button onClick={openModal} className="btn bg-orange-500 px-6 py-2 text-slate-50 hover:text-slate-950 mr-52">
           Apply Now
         </button>
+        <ModalDetail open={modalIsOpen} close={closeModal} />
+
       </div>
       <ul className="mt-20 list-image-[url(/list-icon.png)] text-orange-500 text-sm space-y-1">
         <li>Tangerang Selatan, Banten</li>
