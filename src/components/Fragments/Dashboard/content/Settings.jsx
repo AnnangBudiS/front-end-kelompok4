@@ -1,13 +1,17 @@
 import InputSetting from "../../../Settings/InputSetting";
+import { TbPencilCog } from "react-icons/tb";
 
 const Settings = () => {
   return (
     <>
       <div className="flex flex-col w-full pl-10">
-        <div className="avatar mt-20 mb-10 shadow-xl w-36 h-36 rounded-full">
+        <div className="flex flex-row">
+          <div className="avatar mt-20 shadow-xl w-36 h-36 rounded-full">
           <div>
             <img src="\src\assets\react.svg" alt="none" />
           </div>
+        </div>
+        <button className="mt-56 rounded-xl"><TbPencilCog className="w-8 h-8" /></button>
         </div>
         <InputSetting title="Nama Lengkap" isi="Masukan Nama Lengkap" />
         <InputSetting title="Nama Panggilan" isi="Masukan Nama Panggilan" />
