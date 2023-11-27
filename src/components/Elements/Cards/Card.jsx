@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ModalApply from "../Modal/Modal";
+import { useState } from "react";
 
 const Cards = ({
   key,
@@ -53,6 +55,11 @@ const CardBody = ({ title, company, location, position, salary }) => {
 };
 
 const CardAction = ({ ...props }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true)
+  const closeModal = () => setModalIsOpen(false)
+
   return (
     <div className="flex items-center gap-5">
       <Link
@@ -61,9 +68,10 @@ const CardAction = ({ ...props }) => {
       >
         Detail
       </Link>
-      <button className="bg-orange-500 p-2 px-5 rounded-full text-slate-50 font-semibold">
+      <button onClick={openModal} className="bg-orange-500 p-2 px-5 rounded-full text-slate-50 font-semibold">
         Aply
       </button>
+      <ModalApply open={modalIsOpen} close={closeModal} />
     </div>
   );
 };

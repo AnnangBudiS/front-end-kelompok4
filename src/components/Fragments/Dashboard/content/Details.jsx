@@ -6,8 +6,8 @@ import {
 } from "react-icons/fa6";
 
 import ContentDetails from "./ContentDetails";
-import ModalDetail from "../../../Elements/Modal/Modal"
 import { useState } from "react";
+import ModalApply from "../../../Elements/Modal/Modal";
 
 
 export default function Details() {
@@ -37,7 +37,7 @@ export default function Details() {
         <button onClick={openModal} className="btn bg-orange-500 px-6 py-2 text-slate-50 hover:text-slate-950 mr-52">
           Apply Now
         </button>
-        <ModalDetail open={modalIsOpen} close={closeModal} />
+        <ModalApply open={modalIsOpen} close={closeModal} />
 
       </div>
       <ul className="mt-20 list-image-[url(/list-icon.png)] text-orange-500 text-sm space-y-1">

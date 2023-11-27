@@ -1,6 +1,6 @@
 import ReactModal from "react-modal";
 
-const ModalDetail = ({ open, close }) => {
+const ModalApply = ({ open, close }) => {
   return (
     <div className="flex items-center justify-center">
       <ReactModal isOpen={open} onRequestClose={close}
@@ -21,4 +21,4 @@ const ModalDetail = ({ open, close }) => {
   );
 };
 
-export default ModalDetail;
+export default ModalApply;
