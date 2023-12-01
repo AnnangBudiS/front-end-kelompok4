@@ -12,15 +12,15 @@ const LoginPage = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const { username, password } = Object.fromEntries(formData);
+    const { email, password } = Object.fromEntries(formData);
     axios
-      .post("https://dummyjson.com/auth/login", {
-        username,
+      .post("http://localhost:5000/loginPekerja", {
+        email,
         password,
       })
       .then(async (res) => {
         console.log(res);
-        if (res.status === 400) return "something went wrong";
+        if (res.code === 400) return "something went wrong";
         const { token } = await res.data;
         const userData = await res.data;
         console.log(userData);

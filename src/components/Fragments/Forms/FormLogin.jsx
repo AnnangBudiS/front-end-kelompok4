@@ -7,7 +7,7 @@ const FormLogin = ({ onSubmit }) => {
         label="Username"
         type="text"
         placeholder="Masukan username"
-        name="username"
+        name="email"
       />
       <InputForm
         label="Password"
