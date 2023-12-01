@@ -23,11 +23,11 @@ export default function AuthProvider({ children }) {
     setUser(decodedToken);
   };
 
-  const logout = () => {
+   const logout = () => {
     console.log("hello");
     Cookies.remove("token");
     setUser(null);
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   useEffect(() => {
