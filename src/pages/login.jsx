@@ -12,10 +12,10 @@ const LoginPage = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const { email, password } = Object.fromEntries(formData);
+    const { username, password } = Object.fromEntries(formData);
     axios
-      .post("http://localhost:5000/loginPekerja", {
-        email,
+      .post("https://dummyjson.com/auth/login", {
+        username,
         password,
       })
       .then(async (res) => {
