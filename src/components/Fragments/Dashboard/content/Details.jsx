@@ -5,9 +5,38 @@ import {
   FaTwitter,
 } from "react-icons/fa6";
 
+import { useParams } from "react-router-dom";
 import ContentDetails from "./ContentDetails";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ModalApply from "../../../Elements/Modal/Modal";
 
 export default function Details() {
+  const { id } = useParams();
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [detailsJob, setDetailsJob] = useState();
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  const getDetailsJob = async () => {
+    try {
+      const ress = await axios.get(
+        `https://650ffe1a3ce5d181df5cd37b.mockapi.io/job/${id}`,
+      );
+      const getData = await ress.data;
+      console.log(getData);
+      setDetailsJob(getData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getDetailsJob();
+  }, [id]);
+
   return (
     <section className="my-24 px-32">
       <h1 className="text-5xl font-bold text-orange-500">
@@ -17,22 +46,26 @@ export default function Details() {
         <div className="flex gap-10">
           <div className="avatar">
             <div className="w-32 rounded-full shadow-md">
-              <img src="" alt="pict perusahaan" />
+              <img src={detailsJob?.image} alt="pict perusahaan" />
             </div>
           </div>
           <p>
-            <h2 className="text-2xl font-bold">Front-end Developer</h2>
-            <p className="text-sm">PT.GO-JEK Indonesia</p>
+            <h2 className="text-2xl font-bold">{detailsJob?.title}</h2>
+            <p className="text-sm">{detailsJob?.company}</p>
           </p>
         </div>
-        <button className="btn bg-orange-500 px-6 py-2 text-slate-50 hover:text-slate-950 mr-52">
+        <button
+          onClick={openModal}
+          className="btn bg-orange-500 px-6 py-2 text-slate-50 hover:text-slate-950 mr-52"
+        >
           Apply Now
         </button>
+        <ModalApply open={modalIsOpen} close={closeModal} />
       </div>
       <ul className="mt-20 list-image-[url(/list-icon.png)] text-orange-500 text-sm space-y-1">
-        <li>Tangerang Selatan, Banten</li>
-        <li>Minimal S1</li>
-        <li>Rp. 15.000.000</li>
+        <li>{detailsJob?.location}</li>
+        <li>{detailsJob?.position}</li>
+        <li>Rp.{detailsJob?.salary}</li>
       </ul>
       <ContentDetails title="Deskripsi Pekerjaan">
         <p>

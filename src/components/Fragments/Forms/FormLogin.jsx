@@ -4,7 +4,7 @@ const FormLogin = ({ onSubmit }) => {
   return (
     <form action="" onSubmit={onSubmit}>
       <InputForm
-        label="Username"
+        label="username"
         type="text"
         placeholder="Masukan username"
         name="username"

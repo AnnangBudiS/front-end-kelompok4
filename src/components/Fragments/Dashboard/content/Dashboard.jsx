@@ -1,6 +1,6 @@
 export default function DashboardContent() {
   return (
-    <>
+    <section className="px-32">
       <div className="w-full pl-10">
         <div className="pt-28 text-xl font-bold text-orange-500 mb-5">
           Status Lamaran Pekerjaan
@@ -50,6 +50,6 @@ export default function DashboardContent() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

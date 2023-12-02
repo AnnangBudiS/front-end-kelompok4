@@ -8,11 +8,8 @@ import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
 import Info from "../components/Fragments/Homes/Info";
 import Blog from "../components/Layouts/HomeLayots/Blog";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-// import { useAuth } from "../context/AuthContext";
 
 const HomePages = () => {
-  const { user } = useAuth();
   const [isActive, setIsActive] = useState(false);
   const [infoLokers, setInfoLokers] = useState(false);
   const [blog, setBlog] = useState(false);
@@ -96,24 +93,18 @@ const HomePages = () => {
         </div>
 
         <div className="navbar-end mr-20">
-          {user ? (
-            <Link to="/dashboard">dashboard</Link>
-          ) : (
-            <>
-              <Link
-                to="/register"
-                className="btn btn-outline rounded-full font-bold text-orange-500 border-2 mr-4"
-              >
-                Daftar
-              </Link>
-              <Link
-                to="/login"
-                className="btn bg-orange-500 rounded-full font-bold text-white"
-              >
-                Masuk
-              </Link>{" "}
-            </>
-          )}
+          <Link
+            to="/register"
+            className="btn btn-outline rounded-full font-bold text-orange-500 border-2 mr-4"
+          >
+            Daftar
+          </Link>
+          <Link
+            to="/login"
+            className="btn bg-orange-500 rounded-full font-bold text-white"
+          >
+            Masuk
+          </Link>{" "}
         </div>
       </div>
       {blog ? <Blog /> : AnotherComponens()}

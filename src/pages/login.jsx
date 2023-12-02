@@ -8,24 +8,24 @@ import { useAuth } from "../context/AuthContext";
 const LoginPage = () => {
   const { userAuthCredentials } = useAuth();
   const navigate = useNavigate();
+  const AUTH = import.meta.env.VITE_AUTH_API_KEY;
+  console.log(AUTH);
 
   const handleLogin = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const { username, password } = Object.fromEntries(formData);
     axios
-      .post("https://dummyjson.com/auth/login", {
+      .post(`${AUTH}`, {
         username,
         password,
       })
       .then(async (res) => {
-        console.log(res);
-        if (res.status === 400) return "something went wrong";
+        if (res.code === 400) return "something went wrong";
         const { token } = await res.data;
         const userData = await res.data;
-        console.log(userData);
         userAuthCredentials(token, userData);
-        return navigate("/");
+        return navigate("/dashboard");
       });
   };
   return (

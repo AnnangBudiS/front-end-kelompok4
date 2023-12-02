@@ -6,7 +6,7 @@ export default function Unauthorized() {
     <div className="flex flex-col justify-center items-center min-h-screen">
       <h2>Sory Your not Logined</h2>
       <p>please login first !!!</p>
-      <button onClick={() => navigate("/login")}>Login</button>
+      <button className="btn bg-orange-500" onClick={() => navigate("/login")}>Login</button>
     </div>
   );
 }

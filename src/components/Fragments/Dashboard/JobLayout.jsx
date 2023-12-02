@@ -11,7 +11,7 @@ const JobLayout = ({ children }) => {
 
 const JobLayoutHeader = ({ children }) => {
   return (
-    <div className="p-5 bg-base-100 sticky top-0 z-[1] w-full">
+    <div className="p-5 bg-base-100 w-full">
       <h2 className="text-4xl mb-10 text-orange-500 font-bold">
         Temukan Lowongan Kerja Seusai Impianmu
       </h2>

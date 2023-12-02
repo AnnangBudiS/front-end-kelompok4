@@ -3,7 +3,7 @@ import axios from "axios";
 import Dropdown from "../../../Elements/Dropdown";
 import InputSettings from "../InputDashboard /InputsSetting";
 
-export default function Setting() {
+export default function SettingAcount() {
   const { user } = useAuth();
 
   const handleUpdatePassword = (event) => {
@@ -21,7 +21,7 @@ export default function Setting() {
   };
 
   return (
-    <div className="pt-32 p-20">
+    <div className="pt-32 px-52">
       <h2 className="text-orange-500 text-3xl font-bold mb-5">Setting</h2>
       <p className="text-orange-500 font-bold">User Information</p>
       <div className="flex justify-between my-5 font-bold">
