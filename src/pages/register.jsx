@@ -21,7 +21,7 @@ const RegisterPage = () => {
               className="h-9 px-6 w-[278px] font-semibold rounded-[30px] bg-orange-500 text-white text-center"
               type="submit"
             >
-              Masuk
+              Daftar
             </button>
           </div>
           <div className="text-center text-sm pt-2">

@@ -8,9 +8,11 @@ import DashboardContent from "./components/Fragments/Dashboard/content/Dashboard
 import CariLoker from "./components/Fragments/Dashboard/content/CariLoker";
 import IkutiKomunitas from "./components/Fragments/Dashboard/content/IkutiKomunitas";
 import HubungiCS from "./components/Fragments/Dashboard/content/HubungiCs";
-import Settings from "./components/Fragments/Dashboard/content/Settings";
+
 import Profile from "./components/Fragments/Dashboard/content/Profile";
 import Details from "./components/Fragments/Dashboard/content/Details";
+import ProtectedRoute from "./routers/ProtectedRoute";
+import Setting from "./components/Fragments/Dashboard/content/Setting";
 
 function App() {
   return (
@@ -32,9 +34,13 @@ function App() {
             <Route path="/contact-us" element={<HubungiCS />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/details/:id" element={<Details />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings" element={<Setting />} />
           </Route>
-          <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/login" element={<LoginPage />} />
+          </Route>
+
           <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </Router>

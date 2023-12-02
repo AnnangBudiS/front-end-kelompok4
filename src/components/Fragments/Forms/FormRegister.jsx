@@ -1,7 +1,7 @@
 import InputForm from "../../Elements/Input/index";
-const FormRegister = () => {
+const FormRegister = ({ onRegister }) => {
   return (
-    <form action="">
+    <form onSubmit={onRegister}>
       <InputForm
         label="Nama Depan"
         type="text"
