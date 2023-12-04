@@ -8,16 +8,16 @@ import { useAuth } from "../context/AuthContext";
 const LoginPage = () => {
   const { userAuthCredentials } = useAuth();
   const navigate = useNavigate();
-  const AUTH = import.meta.env.VITE_AUTH_API_KEY;
+  const AUTH = import.meta.env.VITE_API_KEY;
   console.log(AUTH);
 
   const handleLogin = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const { username, password } = Object.fromEntries(formData);
+    const { email, password } = Object.fromEntries(formData);
     axios
-      .post(`${AUTH}`, {
-        username,
+      .post(`${AUTH}/loginPekerja`, {
+        email,
         password,
       })
       .then(async (res) => {

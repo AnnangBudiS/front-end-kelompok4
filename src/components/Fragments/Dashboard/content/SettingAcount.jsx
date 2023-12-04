@@ -1,7 +1,7 @@
 import { useAuth } from "../../../../context/AuthContext";
 import axios from "axios";
 import Dropdown from "../../../Elements/Dropdown";
-import InputSettings from "../InputDashboard /InputsSetting";
+import InputSettings from "../InputDashboard/InputsSetting";
 
 export default function SettingAcount() {
   const { user } = useAuth();
@@ -33,9 +33,11 @@ export default function SettingAcount() {
         </section>
         <section>
           <p>{user?.email}</p>
-          <p>1234 123 123 1233</p>
-          <p>xx-xxxxxx-xxxx</p>
-          <p>indonesia</p>
+          <p>{user?.nomor_hp}</p>
+          <p>
+            {user.tempat_lahir},{user?.tanggal_lahir}
+          </p>
+          <p>{user?.domisili}</p>
         </section>
       </div>
       <hr className="border-2 border-orange-500" />

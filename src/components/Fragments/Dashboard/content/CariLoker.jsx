@@ -2,19 +2,23 @@ import { useEffect, useState } from "react";
 import JobLayout from "../JobLayout";
 import Cards from "../../../Elements/Cards/Card";
 import axios from "axios";
+import { useJob } from "../../../../context/ApplyJobContext";
 
 export default function CariLoker() {
+  const { addToDashboard } = useJob();
   const [jobData, setJobData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const API_KEY = import.meta.env.VITE_API_KEY;
   const getAllData = async () => {
     try {
-      const res = await axios.get(
-        "https://650ffe1a3ce5d181df5cd37b.mockapi.io/job",
-      );
-      const getData = await res.data;
+      const res = await axios.get(`${API_KEY}/deskripsiLowongan`);
+      const getData = await res.data.data;
 
       setJobData(getData);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -24,17 +28,17 @@ export default function CariLoker() {
   return (
     <JobLayout>
       <div className="my-20 grid grid-cols-4 gap-5 mx-32">
-        {jobData ? (
+        {!loading ? (
           jobData.map((item) => (
             <Cards
-              key={item.id}
-              image={item.image}
-              title={item.title}
-              company={item.company}
-              location={item.location}
-              position={item.location}
-              salary={item.salary}
-              to={`/details/${item.id}`}
+              key={item.id_deskripsi_lowongan}
+              title={item.judul}
+              image={item.foto_perusahaan}
+              location={item.alamat_penempatan}
+              salary={item.gaji}
+              required={item.minimal_pendidikan}
+              to={`/details/${item.id_deskripsi_lowongan}`}
+              addDashboard={() => addToDashboard(item)}
             />
           ))
         ) : (

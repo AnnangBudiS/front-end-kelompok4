@@ -19,12 +19,11 @@ export default function Details() {
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getDetailsJob = async () => {
     try {
-      const ress = await axios.get(
-        `https://650ffe1a3ce5d181df5cd37b.mockapi.io/job/${id}`,
-      );
+      const ress = await axios.get(`${API_KEY}/deskripsiLowongan/${id}`);
       const getData = await ress.data;
       console.log(getData);
       setDetailsJob(getData);
@@ -50,8 +49,8 @@ export default function Details() {
             </div>
           </div>
           <p>
-            <h2 className="text-2xl font-bold">{detailsJob?.title}</h2>
-            <p className="text-sm">{detailsJob?.company}</p>
+            <h2 className="text-2xl font-bold">{detailsJob?.judul}</h2>
+            <p className="text-sm">{detailsJob?.nama_perusahaan}</p>
           </p>
         </div>
         <button
@@ -63,9 +62,9 @@ export default function Details() {
         <ModalApply open={modalIsOpen} close={closeModal} />
       </div>
       <ul className="mt-20 list-image-[url(/list-icon.png)] text-orange-500 text-sm space-y-1">
-        <li>{detailsJob?.location}</li>
-        <li>{detailsJob?.position}</li>
-        <li>Rp.{detailsJob?.salary}</li>
+        <li>{detailsJob?.alamat_penempatan}</li>
+        <li>{detailsJob?.minimal_pendidikan}</li>
+        <li>Rp.{detailsJob?.gaji}</li>
       </ul>
       <ContentDetails title="Deskripsi Pekerjaan">
         <p>

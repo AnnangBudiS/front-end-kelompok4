@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Menu() {
   return (
-    <section className="w-52">
+    <section className="w-56">
       <ul>
         <li className="menu">
           <h2 className="menu-title text-xl text-slate-50 font-bold">MENU</h2>

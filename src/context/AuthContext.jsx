@@ -2,6 +2,7 @@ import Cookies from "js-cookie";
 import { createContext, useContext, useEffect, useState } from "react";
 // import { jwt } from "jsonwebtoken-esm";
 import { jwtDecode } from "jwt-decode";
+import axios from "axios";
 
 const UserAuth = createContext();
 
@@ -23,7 +24,32 @@ export default function AuthProvider({ children }) {
     setUser(decodedToken);
   };
 
-   const logout = () => {
+  const updateUserProfile = async (userData) => {
+    try {
+      const token = Cookies.get("token");
+
+      const ress = await axios.put(
+        `http://localhost:5000/profilPekerja`,
+        userData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      const updatedUser = ress.data;
+      setUser(updatedUser);
+    } catch (error) {
+      if (error.ress && error.ress.status === 404) {
+        alert("Data tidak ditemukan");
+      } else {
+        alert("error update data", error.message);
+      }
+    }
+  };
+
+  const logout = () => {
     console.log("hello");
     Cookies.remove("token");
     setUser(null);
@@ -44,6 +70,7 @@ export default function AuthProvider({ children }) {
       value={{
         user,
         isAuthenticated,
+        updateUserProfile,
         userAuthCredentials,
         logout,
       }}

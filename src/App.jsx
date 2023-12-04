@@ -14,31 +14,34 @@ import Details from "./components/Fragments/Dashboard/content/Details";
 import ProtectedRoute from "./routers/ProtectedRoute";
 import Setting from "./components/Fragments/Dashboard/content/SettingAcount";
 import ProfileEdit from "./components/Fragments/Dashboard/content/ProfileEdit";
+import JobApplyProvider from "./context/ApplyJobContext";
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePages />} />
+      <JobApplyProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePages />} />
 
-          <Route path="/" element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<DashboardContent />} />
-            <Route path="/cari-loker" element={<CariLoker />} />
-            <Route path="/ikuti-komunitas" element={<IkutiKomunitas />} />
-            <Route path="/contact-us" element={<HubungiCS />} />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/details/:id" element={<Details />} />
-            <Route path="/settings" element={<Setting />} />
-            <Route path="/edit-profile/:id" element={<ProfileEdit />} />
-          </Route>
+            <Route path="/" element={<PrivateRoute />}>
+              <Route path="/dashboard" element={<DashboardContent />} />
+              <Route path="/cari-loker" element={<CariLoker />} />
+              <Route path="/ikuti-komunitas" element={<IkutiKomunitas />} />
+              <Route path="/contact-us" element={<HubungiCS />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/details/:id" element={<Details />} />
+              <Route path="/settings" element={<Setting />} />
+              <Route path="/edit-profile/:id" element={<ProfileEdit />} />
+            </Route>
 
-          <Route path="/" element={<ProtectedRoute />}>
-            <Route path="/login" element={<LoginPage />} />
-          </Route>
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </Router>
+            <Route path="/" element={<ProtectedRoute />}>
+              <Route path="/login" element={<LoginPage />} />
+            </Route>
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </Router>
+      </JobApplyProvider>
     </AuthProvider>
   );
 }
