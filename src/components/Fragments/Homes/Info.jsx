@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import Card from "../../Elements/Cards/CardHome";
 import axios from "axios";
+import Cards from "../../Elements/Cards/Card";
 
 const InfoLoker = () => {
   const [state, setState] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getData = async () => {
     try {
-      const res = await axios.get(
-        "https://650ffe1a3ce5d181df5cd37b.mockapi.io/job",
-      );
-      const datas = await res.data;
+      const res = await axios.get(`${API_KEY}/deskripsiLowongan`);
+      const datas = await res.data.data;
 
       setState(datas);
       console.log(datas);
@@ -22,8 +22,6 @@ const InfoLoker = () => {
   useEffect(() => {
     getData();
   }, []);
-  // const response = await fetch(`${}`)
-  // const loker = await response.json()
 
   return (
     <>
@@ -46,36 +44,16 @@ const InfoLoker = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-3">
-          {/* {loker.map(data => {
-              return (
-                <div key={} className='shadow-xl'>
-                  <Card title={} images={} id={}/>
-                </div>
-              )
-            })
-            } */}
+        <div className="grid grid-cols-3 gap-3 container w-full mx-auto mt-10">
           {state.map((items, index) => (
-            <Card
+            <Cards
               key={index}
-              image={items.image}
-              position={items.position}
-              salary={items.salary}
-              location={items.location}
+              image={items?.foto_perusahaan}
+              position={items.judul}
+              salary={items.gaji}
+              location={items.alamat_penempatan}
             />
           ))}
-          <div>
-            <Card />
-          </div>
-          <div>
-            <Card />
-          </div>
-          <div>
-            <Card />
-          </div>
-          <div>
-            <Card />
-          </div>
         </div>
       </div>
     </>

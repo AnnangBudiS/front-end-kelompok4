@@ -2,23 +2,13 @@ import { useAuth } from "../../../../context/AuthContext";
 import axios from "axios";
 import Dropdown from "../../../Elements/Dropdown";
 import InputSettings from "../InputDashboard/InputsSetting";
+import { useState } from "react";
 
 export default function SettingAcount() {
-  const { user } = useAuth();
+  const { updateUserProfile, user } = useAuth();
 
-  const handleUpdatePassword = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const { password } = Object.fromEntries(formData);
-
-    axios
-      .put(`https://dummyjson.com/users/${user}`, {
-        password,
-      })
-      .then(async (ress) => {
-        if (ress.status === 200) return "change password successfully";
-      });
-  };
+  console.log(user);
+  const [newPassword, setNewPassword] = useState({});
 
   return (
     <div className="pt-32 px-52">
@@ -35,7 +25,7 @@ export default function SettingAcount() {
           <p>{user?.email}</p>
           <p>{user?.nomor_hp}</p>
           <p>
-            {user.tempat_lahir},{user?.tanggal_lahir}
+            {user?.tempat_lahir},{user?.tanggal_lahir}
           </p>
           <p>{user?.domisili}</p>
         </section>
@@ -67,7 +57,7 @@ export default function SettingAcount() {
       <hr className="border-2 border-orange-500" />
       <div>
         <p className="text-orange-500 font-bold mt-5">Ubah Password</p>
-        <form onSubmit={handleUpdatePassword}>
+        <form>
           <InputSettings
             title="Password Baru"
             type="password"

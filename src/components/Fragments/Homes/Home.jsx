@@ -10,15 +10,15 @@ import Cards from "../../Elements/Cards/Card";
 
 const Home = () => {
   const [jobSlider, setJobSlider] = useState([]);
-  const API_JOBS = import.meta.env.VITE_MOCK_API_JOB;
-  console.log(API_JOBS);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getJobDataApi = async () => {
     try {
-      const ress = await axios.get(`${API_JOBS}`);
-      const getData = await ress.data;
+      const ress = await axios.get(`${API_KEY}/deskripsiLowongan`);
+      const getData = await ress.data.data;
 
-      setJobSlider(getData.splice(1, 5));
+      console.log(getData);
+      setJobSlider(getData);
     } catch (error) {
       console.error(error);
     }
@@ -47,12 +47,11 @@ const Home = () => {
           {jobSlider.map((items) => (
             <SwiperSlide key={items.id}>
               <Cards
-                title={items.title}
-                image={items.image}
-                company={items.company}
-                salary={items.salary}
-                location={items.location}
-                position={items.position}
+                title={items.judul}
+                image={items.foto_perusahaan}
+                salary={items.gaji}
+                location={items.alamat_penempatan}
+                position={items.minimal_pendidikan}
               />
             </SwiperSlide>
           ))}
