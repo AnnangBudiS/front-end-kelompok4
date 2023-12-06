@@ -21,7 +21,7 @@ const LoginPage = () => {
         password,
       })
       .then(async (res) => {
-        if (res.code === 400) return "something went wrong";
+        if (res.code === 403) return alert("something went wrong");
         const { token } = await res.data;
         const userData = await res.data;
         userAuthCredentials(token, userData);

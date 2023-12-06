@@ -24,17 +24,17 @@ export default function AuthProvider({ children }) {
     setUser(decodedToken);
   };
 
-  console.log(user);
+  // console.log(user);
   const updateUserProfile = async (userData) => {
     try {
       const token = Cookies.get("token");
-      console.log(userData);
       const ress = await axios.put(
         `http://localhost:5000/profilPekerja/${user.id_pekerja}`,
         userData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
           },
         },
       );

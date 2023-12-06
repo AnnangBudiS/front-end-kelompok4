@@ -1,6 +1,6 @@
 import InputSettings from "../InputDashboard/InputsSetting";
 import { useAuth } from "../../../../context/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProfileEdit = () => {
   const { updateUserProfile, user } = useAuth();
@@ -15,7 +15,6 @@ const ProfileEdit = () => {
     nomor_hp: user?.nomor_hp || "",
     domisili: user?.domisili || "",
     detail_tentang_saya: user?.detail_tentang_saya || "",
-    foto_pekerja: user?.foto_pekerja || "",
     panggilan: user?.panggilan || "",
   });
 
@@ -32,6 +31,11 @@ const ProfileEdit = () => {
       [name]: value,
     }));
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <>
       <div className="flex flex-col w-full px-52 py-24">
@@ -49,7 +53,7 @@ const ProfileEdit = () => {
             <input
               type="file"
               className="file-input file-input-ghost w-full max-w-xs"
-              name="foto_pekerja"
+              name="image"
             />
           </div>
 
@@ -58,7 +62,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.nama_depan}
             name="nama_depan"
-            value={formData?.nama_depan}
+            // value={profileData?.nama_depan}
             onChange={handleChange}
           />
           <InputSettings
@@ -66,7 +70,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.nama_belakang}
             name="nama_belakang"
-            value={formData.nama_belakang}
+            // value={profileData?.nama_belakang}
             onChange={handleChange}
           />
           <div className="flex items-center gap-4">
@@ -74,12 +78,12 @@ const ProfileEdit = () => {
               label="Tempat Lahir"
               className="border-b border-orange-500 max-w-sm focus:outline-none"
               placeholder={user?.tempat_lahir}
-              name="email"
-              value={formData?.tempat_lahir}
+              name="tempat_lahir"
+              // value={profileData?.tempat_lahir}
               onChange={handleChange}
             />
             <InputSettings
-              label="Tempat, Tanggal Lahir"
+              label="Tanggal Lahir"
               type="date"
               className="border-b border-orange-500 max-w-sm focus:outline-none"
               name="tanggal_lahir"
@@ -91,7 +95,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.email}
             name="email"
-            value={formData?.email}
+            // value={profileData?.email}
             onChange={handleChange}
           />
 
@@ -100,7 +104,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.jns_kel}
             name="jns_kel"
-            value={formData.jns_kel}
+            // value={profileData?.jns_kel}
             onChange={handleChange}
           />
           <InputSettings
@@ -108,7 +112,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.nomor_hp}
             name="nomor_hp"
-            value={formData.nomor_hp}
+            // value={profileData?.nomor_hp}
             onChange={handleChange}
           />
           <InputSettings
@@ -116,7 +120,7 @@ const ProfileEdit = () => {
             className="border-b border-orange-500 max-w-sm focus:outline-none"
             placeholder={user?.domisili}
             name="domisili"
-            value={formData.domisili}
+            // value={profileData?.domisili}
             onChange={handleChange}
           />
 
