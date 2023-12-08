@@ -39,13 +39,15 @@ export default function AuthProvider({ children }) {
         },
       );
 
-      const updatedUser = ress.data;
+      const updatedUser = ress.data.data;
+      if (ress.data.data.status === 200)
+        return alert("update user profile successful");
       setUser(updatedUser);
     } catch (error) {
       if (error.ress && error.ress.status === 404) {
         alert("Data tidak ditemukan");
       } else {
-        alert("error update data", error.message);
+        alert("Update berhasil");
       }
     }
   };

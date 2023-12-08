@@ -14,6 +14,7 @@ const ProfileEdit = () => {
     jns_kel: user?.jns_kel || "",
     nomor_hp: user?.nomor_hp || "",
     domisili: user?.domisili || "",
+    foto_pekerja: user?.foto_pekerja || "",
     detail_tentang_saya: user?.detail_tentang_saya || "",
     panggilan: user?.panggilan || "",
   });

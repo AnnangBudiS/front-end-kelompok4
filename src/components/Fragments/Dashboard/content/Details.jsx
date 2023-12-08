@@ -24,7 +24,7 @@ export default function Details() {
   const getDetailsJob = async () => {
     try {
       const ress = await axios.get(`${API_KEY}/deskripsiLowongan/${id}`);
-      const getData = await ress.data;
+      const getData = await ress.data.data;
       console.log(getData);
       setDetailsJob(getData);
     } catch (error) {
@@ -67,58 +67,16 @@ export default function Details() {
         <li>Rp.{detailsJob?.gaji}</li>
       </ul>
       <ContentDetails title="Deskripsi Pekerjaan">
-        <p>
-          Kami sedang mencari seorang Full Stack Developer yang berpengalaman
-          untuk bergabung dengan tim kami. Tugas dan tanggung jawab utama Anda
-          akan meliputi:
-        </p>
-        <ul className="list-disc pl-6">
-          <li>
-            Merancang, mengembangkan, dan memelihara aplikasi web dan mobile
-          </li>
-          <li>
-            Bekerja sama dengan tim desain dan bisnis untuk memahami kebutuhan
-            pengguna
-          </li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_deskripsi}</p>
       </ContentDetails>
       <ContentDetails title="Kualifikasi">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-          <li>Menguasai keterampilan pemrograman front end dan back end</li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_catatan}</p>
       </ContentDetails>
       <ContentDetails title="Benefit">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-          <li>Menguasai keterampilan pemrograman front end dan back end</li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_benefit}</p>
       </ContentDetails>
       <ContentDetails title="Catatan">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-        </ul>
+        <p>{detailsJob?.detail_catatan}</p>
       </ContentDetails>
       <hr className="border-2 my-4" />
       <ContentDetails title="Tentang Perusahaan">

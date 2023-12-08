@@ -3,6 +3,7 @@ import { useAuth } from "../../../../context/AuthContext";
 
 export default function Profile() {
   const { user } = useAuth();
+  console.log(user);
 
   return (
     <section className="mt-24 px-32">
