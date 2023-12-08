@@ -19,13 +19,12 @@ export default function Details() {
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getDetailsJob = async () => {
     try {
-      const ress = await axios.get(
-        `https://650ffe1a3ce5d181df5cd37b.mockapi.io/job/${id}`,
-      );
-      const getData = await ress.data;
+      const ress = await axios.get(`${API_KEY}/deskripsiLowongan/${id}`);
+      const getData = await ress.data.data;
       console.log(getData);
       setDetailsJob(getData);
     } catch (error) {
@@ -50,8 +49,8 @@ export default function Details() {
             </div>
           </div>
           <p>
-            <h2 className="text-2xl font-bold">{detailsJob?.title}</h2>
-            <p className="text-sm">{detailsJob?.company}</p>
+            <h2 className="text-2xl font-bold">{detailsJob?.judul}</h2>
+            <p className="text-sm">{detailsJob?.nama_perusahaan}</p>
           </p>
         </div>
         <button
@@ -63,63 +62,21 @@ export default function Details() {
         <ModalApply open={modalIsOpen} close={closeModal} />
       </div>
       <ul className="mt-20 list-image-[url(/list-icon.png)] text-orange-500 text-sm space-y-1">
-        <li>{detailsJob?.location}</li>
-        <li>{detailsJob?.position}</li>
-        <li>Rp.{detailsJob?.salary}</li>
+        <li>{detailsJob?.alamat_penempatan}</li>
+        <li>{detailsJob?.minimal_pendidikan}</li>
+        <li>Rp.{detailsJob?.gaji}</li>
       </ul>
       <ContentDetails title="Deskripsi Pekerjaan">
-        <p>
-          Kami sedang mencari seorang Full Stack Developer yang berpengalaman
-          untuk bergabung dengan tim kami. Tugas dan tanggung jawab utama Anda
-          akan meliputi:
-        </p>
-        <ul className="list-disc pl-6">
-          <li>
-            Merancang, mengembangkan, dan memelihara aplikasi web dan mobile
-          </li>
-          <li>
-            Bekerja sama dengan tim desain dan bisnis untuk memahami kebutuhan
-            pengguna
-          </li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_deskripsi}</p>
       </ContentDetails>
       <ContentDetails title="Kualifikasi">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-          <li>Menguasai keterampilan pemrograman front end dan back end</li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_catatan}</p>
       </ContentDetails>
       <ContentDetails title="Benefit">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-          <li>Menguasai keterampilan pemrograman front end dan back end</li>
-          <li>
-            Menggunakan berbagai bahasa pemrograman dan framework untuk
-            membangun aplikasi yang berkualitas
-          </li>
-          <li>Menjaga kode yang bersih dan terorganisir</li>
-        </ul>
+        <p>{detailsJob?.detail_benefit}</p>
       </ContentDetails>
       <ContentDetails title="Catatan">
-        <ul className="list-disc pl-6">
-          <li>
-            Memiliki pengalaman minimal 3 tahun sebagai Full Stack Developer{" "}
-          </li>
-        </ul>
+        <p>{detailsJob?.detail_catatan}</p>
       </ContentDetails>
       <hr className="border-2 my-4" />
       <ContentDetails title="Tentang Perusahaan">

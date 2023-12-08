@@ -6,13 +6,13 @@ const FormRegister = ({ onRegister }) => {
         label="Nama Depan"
         type="text"
         placeholder="Masukkan Nama Depan"
-        name="firstName"
+        name="nama_depan"
       />
       <InputForm
         label="Nama Belakang"
         type="Text"
         placeholder="Masukkan Nama Belakang"
-        name="lastName"
+        name="nama_belakang"
       />
       <InputForm
         label="Email"
@@ -24,7 +24,7 @@ const FormRegister = ({ onRegister }) => {
         label="Whatsapp"
         type="tel"
         placeholder="Masukkan No Whatsapp"
-        name="phone"
+        name="nomor_hp"
       />
       <InputForm
         label="Password"

@@ -6,24 +6,33 @@ import axios from "axios";
 const RegisterPage = () => {
   const navigate = useNavigate();
 
-  const handleRegister = (event) => {
+  const API_KEY = import.meta.env.VITE_API_KEY;
+
+  const handleRegister = async (event) => {
     event.preventDefault();
     const newData = new FormData(event.target);
-    const { firstName, lastName, email, phone, password } =
+    const { email, nama_depan, nama_belakang, nomor_hp, password } =
       Object.fromEntries(newData);
-    axios
-      .post("https://dummyjson.com/users/add", {
-        firstName,
-        lastName,
+    try {
+      const ress = await axios.post(`${API_KEY}/profilPekerja`, {
         email,
-        phone,
+        nama_depan,
+        nama_belakang,
+        nomor_hp,
         password,
-      })
-      .then(async (ress) => {
-        if (ress.status === 500) return alert("something went wrong");
-        navigate("/login");
       });
+      console.log(ress);
+      if (ress.status === 201) {
+        navigate("/login");
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred during registrastion");
+    }
   };
+
   return (
     <div className=" h-screen flex flex-row">
       <img

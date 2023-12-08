@@ -23,7 +23,7 @@ export default function Navbar() {
           </label>
           <ul className="menu menu-sm dropdown-content mt-3 z-[1] shadow bg-base-100 rounded-box w-52">
             <li>
-              <Link to={`/profile/${user?.id}`}>Profile</Link>
+              <Link to={`/profile`}>Profile</Link>
             </li>
             <li>
               <Link to="/settings">Settings</Link>
