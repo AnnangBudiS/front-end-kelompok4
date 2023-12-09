@@ -15,6 +15,10 @@ import ProtectedRoute from "./routers/ProtectedRoute";
 import Setting from "./components/Fragments/Dashboard/content/SettingAcount";
 import ProfileEdit from "./components/Fragments/Dashboard/content/ProfileEdit";
 import JobApplyProvider from "./context/ApplyJobContext";
+import HeaderHome1 from "./components/Layouts/HomeLayots/HeaderHome1";
+import HeaderHome2 from "./components/Layouts/HomeLayots/HeaderHome2";
+import Blog from "./components/Layouts/HomeLayots/Blog";
+import InfoLoker from "./components/Fragments/Homes/Info";
 
 function App() {
   return (
@@ -22,7 +26,12 @@ function App() {
       <JobApplyProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<HomePages />} />
+            <Route path="/" element={<HomePages />}>
+              <Route index element={<HeaderHome1 />} />
+              <Route path="/employer-page" element={<HeaderHome2 />} />
+              <Route path="/info-lokers" element={<InfoLoker />} />
+              <Route path="/blog-page" element={<Blog />} />
+            </Route>
 
             <Route path="/" element={<PrivateRoute />}>
               <Route path="/dashboard" element={<DashboardContent />} />

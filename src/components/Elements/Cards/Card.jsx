@@ -14,7 +14,7 @@ const Cards = ({
   return (
     <div
       key={key}
-      className="p-4 border-2 border-orange-500 bg-base-100 rounded-xl shadow-xl"
+      className="p-4 w-56 border-2 border-orange-500 bg-base-100 rounded-xl shadow-xl"
     >
       <div className="avatar mb-5">
         <div className="w-16 rounded-full shadow-xl">

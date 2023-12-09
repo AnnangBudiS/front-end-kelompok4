@@ -7,7 +7,9 @@ import Home from "../components/Fragments/Homes/Home";
 import PasangLoker from "../components/Layouts/HomeLayots/PasangLoker";
 import Info from "../components/Fragments/Homes/Info";
 import Blog from "../components/Layouts/HomeLayots/Blog";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import NavbarHome from "../components/Elements/Navbar/NavbarHome";
+import Hero from "../components/Elements/Hero/Hero";
 
 const HomePages = () => {
   const [isActive, setIsActive] = useState(false);
@@ -35,23 +37,32 @@ const HomePages = () => {
     setBlog(true);
   };
 
-  const Componens = () => {
-    return (
-      <>
-        {isActive ? <HeaderHome2 /> : <HeaderHome1 />}
-        {isActive ? <PasangLoker /> : <Home />}
-        <OurCompany />
-      </>
-    );
-  };
+  // const Componens = () => {
+  //   return (
+  //     <>
+  //       {isActive ? <HeaderHome2 /> : <HeaderHome1 />}
+  //       {isActive ? <PasangLoker /> : <Home />}
+  //       <OurCompany />
+  //     </>
+  //   );
+  // };
 
-  const AnotherComponens = () => {
-    return <>{infoLokers ? <Info /> : Componens()}</>;
-  };
+  // const AnotherComponens = () => {
+  //   return <>{infoLokers ? <Info /> : Componens()}</>;
+  // };
 
   return (
     <>
-      <div className="navbar bg-base-100 text-orange-500 drop-shadow-lg z-[1]">
+      <header className="fixed w-full shadow-md z-[2]">
+        <NavbarHome />
+      </header>
+      <main className="">
+        <Outlet />
+      </main>
+      <footer>
+        <FooterHome />
+      </footer>
+      {/* <div className="navbar fixed w-full bg-base-100 text-orange-500 drop-shadow-lg z-[1]">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -71,7 +82,7 @@ const HomePages = () => {
               </svg>
             </label>
           </div>
-          <a className="btn btn-ghost normal-case text-3xl font-bold ml-20">
+          <a className="btn btn-ghost text-xl normal-case md:text-3xl font-bold">
             Forlokers
           </a>
         </div>
@@ -106,9 +117,7 @@ const HomePages = () => {
             Masuk
           </Link>{" "}
         </div>
-      </div>
-      {blog ? <Blog /> : AnotherComponens()}
-      <FooterHome />
+      </div> */}
     </>
   );
 };

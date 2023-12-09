@@ -29,11 +29,14 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <div className="my-10 mx-32">
+    <section className="px-5 md:px-56">
+      <div className="my-10  ">
+        <h2 className="text-center text-3xl text-orange-500 font-bold mb-5">
+          Info Loker
+        </h2>
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={4}
+          spaceBetween={100}
           pagination={{
             clickable: true,
           }}
@@ -42,10 +45,10 @@ const Home = () => {
           style={{
             "--swiper-navigation-color": "#FFBA08",
           }}
-          className="mySwiper p-20"
+          className=""
         >
           {jobSlider.map((items) => (
-            <SwiperSlide key={items.id}>
+            <SwiperSlide className="mr-32" key={items.id}>
               <Cards
                 title={items.judul}
                 image={items.foto_perusahaan}
@@ -64,7 +67,7 @@ const Home = () => {
           <img src="./Homepage/seemore.png" width="18px" height="18px" />
         </a>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Card from "../../Elements/Cards/CardHome";
 import axios from "axios";
 import Cards from "../../Elements/Cards/Card";
 
@@ -25,7 +24,7 @@ const InfoLoker = () => {
 
   return (
     <>
-      <div className="bg-white w-full ">
+      <div className="bg-white w-full pt-20 ">
         <div className="pl-20 pt-8 pb-1 top-0 z-[1] w-3/5 bg-transparent">
           <div>
             <p className="pl-5 font-semibold mb-2">
@@ -44,7 +43,7 @@ const InfoLoker = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-3 container w-full mx-auto mt-10">
+        <div className="grid grid-cols-3 gap-3 container w-full pb-20 md:px-52 mx-auto mt-10">
           {state.map((items, index) => (
             <Cards
               key={index}
